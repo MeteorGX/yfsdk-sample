@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.yfgame.sdk"
+          android:versionCode="1"
+          android:versionName="1.0.0">
+
+    <!-- 基础网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <!-- 高版本不支持IMEI获取, 需要 OAID 替代方案权限 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+
+    <!-- 特殊权限：需在隐私政策说明用途 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <!-- 敏感权限 -->
+    <uses-permission
+            android:name="android.permission.READ_PHONE_STATE"
+            android:maxSdkVersion="28"/>
+    <uses-permission
+            android:name="android.permission.READ_EXTERNAL_STORAGE"
+            android:maxSdkVersion="28"/>
+    <uses-permission
+            android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+            android:maxSdkVersion="28"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+
+    <application>
+
+        <!-- HTTP 兼容配置 -->
+        <uses-library
+                android:name="org.apache.http.legacy"
+                android:required="false"/>
+
+    </application>
+
+</manifest>

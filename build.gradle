@@ -1,0 +1,30 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // 使用与Gradle 7.x兼容的AGP版本
+        // 注意: 采用Gradle 7.5版本
+        //noinspection AndroidGradlePluginVersion,AndroidGradlePluginVersion
+        classpath "com.android.tools.build:gradle:${AndroidBuildGradleToolsVersion}"
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        google()
+        mavenCentral()
+    }
+}
+
+// 新版本命令注册写法, 注意好兼容性
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
